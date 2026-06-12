@@ -250,6 +250,7 @@ router.post("/newsletter", (req, res) => {
   const { email } = req.body;
 
 
+ console.log("Contact API called");
   const mail = {
     from: `"Dinesh Portfolio" <${process.env.EMAIL_USER}>`,
     to: process.env.EMAIL_USER,

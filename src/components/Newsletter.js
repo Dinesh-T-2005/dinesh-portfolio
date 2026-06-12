@@ -29,7 +29,7 @@ export const Newsletter = ({ status, message, onValidated }) => {
 
     try {
       setButtonText("Sending...");
-
+console.log("API URL:", process.env.REACT_APP_API_URL);
       const response = await fetch(`${process.env.REACT_APP_API_URL}/newsletter`, {
         method: "POST",
         headers: {
