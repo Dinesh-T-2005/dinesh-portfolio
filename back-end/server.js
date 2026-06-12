@@ -12,13 +12,14 @@ const PORT = process.env.PORT || 5001;
 
 app.listen(PORT, () => {
   console.log(`Server Running on ${PORT}`);
-}); console.log(process.env.EMAIL_USER);
+}); 
+console.log(process.env.EMAIL_USER);
 console.log(process.env.EMAIL_PASS);
 
 const contactEmail = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 465,
-  secure: true,
+  host: "smtp-relay.brevo.com",
+  port: 587,
+  secure: false,
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS,
@@ -35,7 +36,7 @@ contactEmail.verify((error) => {
 router.post("/contact", (req, res) => {
   const { firstName, lastName, email, phone, message } = req.body;
 
-
+ console.log("Contact API called");
 
   const fullName = `${firstName} ${lastName}`;
 
