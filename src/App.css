@@ -250,7 +250,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   display: inline-block;
 }
 .banner h1 {
-  font-size: 65px;
+  font-size: 40px;
   font-weight: 700;
   letter-spacing: 0.8px;
   line-height: 1;
@@ -1023,4 +1023,44 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     width: 100%;
     max-width: 250px;
   }
+}
+
+.service-content {
+  max-width: 850px;
+  margin: 0 auto;
+  color: #fff;
+}
+
+.service-content h2 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.service-content p {
+  font-size: 18px;
+  line-height: 1.9;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 24px;
+  text-align: left;   /* Important */
+}
+
+.service-highlight {
+  margin-top: 35px;
+  padding: 20px 25px;
+  background: rgba(79, 156, 255, 0.12);
+  border-left: 4px solid #4f9cff;
+  border-radius: 12px;
+}
+
+.service-highlight strong {
+  display: block;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.service-highlight span {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
 }

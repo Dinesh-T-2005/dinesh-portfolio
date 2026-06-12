@@ -12,7 +12,7 @@ export const Banner = () => {
   const [text, setText] = useState('');
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const [index, setIndex] = useState(1);
-  const toRotate = ["Web Developer", "Angular Developer", "Software Engineer"];
+  const toRotate = ["Web Developer", "Angular Developer", "Software Engineer" ,"React Developer"];
   const period = 2000;
 
   useEffect(() => {
@@ -57,7 +57,7 @@ export const Banner = () => {
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                   <span className="tagline">Welcome to my Portfolio</span>
-                  <h1>{`Hi! I'm Dinesh`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Web Developer", "Angular Developer", "Software Engineer" ]'><span className="wrap">{text}</span></span></h1>
+                  <h1>{`Hi! I'm Dinesh`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Web Developer", "Angular Developer", "Software Engineer", "React Developer" ]'><span className="wrap">{text}</span></span></h1>
                   <p>Angular Full Stack Developer with 1.5 years of experience in building responsive and scalable web applications using Angular, TypeScript, Angular Material, and Tailwind CSS. Experienced in ATS and recruitment management platforms, REST API integration, Reactive Forms, and developing reusable components. Passionate about creating clean, maintainable code and delivering high-quality solutions while continuously learning and growing as a developer.
                   </p>
                   <div className="banner-btns">

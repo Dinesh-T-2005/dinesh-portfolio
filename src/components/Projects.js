@@ -2,7 +2,7 @@ import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
 import projImg1 from "../assets/img/Screenshot 2026-06-11 at 8.49.19 PM.png";
 import projImg2 from "../assets/img/Screenshot 2026-06-11 at 9.50.07 PM.png";
-import projImg3 from "../assets/img/project-img3.png";
+import projImg4 from "../assets/img/Screenshot 2026-06-12 at 6.42.23 PM.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
@@ -25,6 +25,15 @@ export const Projects = () => {
       title: "Asta - Recruitment CRM",
       description: "Design & Development",
       imgUrl: projImg2,
+      url: "https://astacrs.com/"
+    }
+  ];
+  const project3 = [
+    {},
+    {
+      title: "Custom Web Applications",
+      description: "Design & Development",
+      imgUrl: projImg4,
       url: "https://astacrs.com/"
     }
   ];
@@ -257,7 +266,44 @@ export const Projects = () => {
                         </div>
                       </Tab.Pane>
                       <Tab.Pane eventKey="third">
-                        <p>I have hands-on experience working with modern development tools and technologies, including Git, Postman, VS Code, and SQL. I am proficient in REST API integration, debugging, production support, and collaborating with backend and QA teams to deliver reliable and scalable applications. I continuously explore new technologies and best practices to improve development efficiency and code quality.</p>
+                        <Row>
+                          {project3.map((project, index) => (
+                            <ProjectCard
+                              key={index}
+                              {...project}
+                            />
+                          ))}
+                        </Row>
+                        <div className="service-content">
+                          <h2>💻 Need a Website or Web Application?</h2>
+
+                          <p>
+                            Looking to build a modern, responsive, and high-performing website
+                            for your business or personal brand? I can help transform your ideas
+                            into reality.
+                          </p>
+
+                          <p>
+                            I specialize in developing corporate websites, portfolio websites,
+                            recruitment platforms, business applications, and custom web
+                            solutions using modern technologies such as React, Angular,
+                            TypeScript, and Node.js.
+                          </p>
+
+                          <p>
+                            Whether you need a new website, enhancements to an existing
+                            application, UI improvements, API integrations, or ongoing
+                            maintenance and support, feel free to get in touch.
+                          </p>
+
+                          <div className="service-highlight">
+                            <strong>🚀 Let's Build Something Amazing Together!</strong>
+                            <span>
+                              Scalable • User-Friendly • Responsive • High Performance
+                            </span>
+                          </div>
+                  
+                        </div>
                       </Tab.Pane>
                     </Tab.Content>
                   </Tab.Container>
