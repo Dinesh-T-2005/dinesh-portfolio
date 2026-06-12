@@ -77,13 +77,14 @@ export const Contact = () => {
   try {
     setButtonText("Sending...");
 
-    const response = await fetch("http://localhost:5001/contact", {
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/contact`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(formDetails),
     });
+    console.log(process.env.REACT_APP_API_URL);
 
     const result = await response.json();
 

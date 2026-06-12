@@ -240,7 +240,7 @@ router.post("/contact", (req, res) => {
     });
   });
 });
-app.post("/newsletter", (req, res) => {
+router.post("/newsletter", (req, res) => {
   const { email } = req.body;
 
 
