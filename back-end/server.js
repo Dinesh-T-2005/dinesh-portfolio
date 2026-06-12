@@ -13,8 +13,9 @@ const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => {
   console.log(`Server Running on ${PORT}`);
 }); 
-console.log(process.env.EMAIL_USER);
-console.log(process.env.EMAIL_PASS);
+app.get("/", (req, res) => {
+  res.send("Backend Running");
+});
 
 const contactEmail = nodemailer.createTransport({
   host: "smtp.gmail.com",
