@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Col, Row } from "react-bootstrap";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import emailjs from "@emailjs/browser";
 
 export const Newsletter = ({ status, message, onValidated }) => {
   const [email, setEmail] = useState('');
@@ -29,32 +30,29 @@ export const Newsletter = ({ status, message, onValidated }) => {
 
     try {
       setButtonText("Sending...");
-console.log("API URL:", process.env.REACT_APP_API_URL);
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/newsletter`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      await emailjs.send(
+        "service_khu4upr",
+        "template_zu13kup",
+        {
+          to_email: "dinesh996528@gmail.com",
+          subscriber_email: email,
+          date: new Date().toLocaleString(),
         },
-        body: JSON.stringify({ email }),
-      });
+        "MMmTFQEx1YQAUs7Wb"
+      );
 
-      const result = await response.json();
-
-      console.log(result);
-
-      if (result.code === 200) {
-        setEmail("");
-        toast.success("Subscribed successfully!");
-      } else {
-        toast.error(result.message || "Subscription failed.");
-      }
-    } catch (err) {
-      console.error(err);
-      toast.error("Unable to connect to the server.");
+      setEmail("");
+      toast.success("Subscribed successfully!");
+    } catch (error) {
+      console.error(error);
+      toast.error("Failed to subscribe.");
     } finally {
       setButtonText("Submit");
     }
   };
+
+
+
   const clearFields = () => {
     setEmail('');
   }

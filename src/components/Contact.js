@@ -5,6 +5,7 @@ import "animate.css";
 import TrackVisibility from "react-on-screen";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import emailjs from "@emailjs/browser";
 
 export const Contact = () => {
   const formInitialDetails = {
@@ -66,43 +67,43 @@ export const Contact = () => {
     }));
   };
 
- const handleSubmit = async (e) => {
-  e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  if (!validateForm()) {
-    toast.error("Please fill all required fields correctly.");
-    return;
-  }
+    if (!validateForm()) {
+      toast.error("Please fill all required fields correctly.");
+      return;
+    }
 
-  try {
-    setButtonText("Sending...");
+    try {
+      setButtonText("Sending...");
 
-    const response = await fetch(`${process.env.REACT_APP_API_URL}/contact`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formDetails),
-    });
-    console.log(process.env.REACT_APP_API_URL);
+      await emailjs.send(
+        "service_khu4upr",
+        "template_3qvncz2",
+        {
+          to_email: "dinesh996528@gmail.com",
+          first_name: formDetails.firstName,
+          last_name: formDetails.lastName,
+          email: formDetails.email,
+          phone: formDetails.phone,
+          message: formDetails.message,
+          date: new Date().toLocaleString(),
+        },
+        "MMmTFQEx1YQAUs7Wb"
+      );
 
-    const result = await response.json();
-
-    if (result.code === 200) {
       toast.success("Mail sent successfully!");
 
       setFormDetails(formInitialDetails);
       setErrors({});
-    } else {
-      toast.error("Something went wrong. Please try again.");
+    } catch (error) {
+      console.error(error);
+      toast.error("Failed to send mail.");
+    } finally {
+      setButtonText("Send");
     }
-  } catch (error) {
-    console.error(error);
-    toast.error("Unable to connect to the server.");
-  } finally {
-    setButtonText("Send");
-  }
-};
+  };
 
   return (
     <section className="contact" id="connect">
