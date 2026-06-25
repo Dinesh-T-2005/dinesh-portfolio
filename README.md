@@ -140,3 +140,45 @@ Software Developer | Angular · Node.js · React · SQL · AI Automation
 ## 📄 License
 
 This project is open for learning and personal reference purposes.
+
+
+---
+
+# What I suggest you do next
+For **`tresume-ats-overview`**, don’t keep it short.  
+Make it your **main polished case-study repo** with:
+
+## Must include
+- 12–15 screenshots
+- full module list
+- product workflow
+- architecture
+- tech stack
+- links to all child repos
+
+---
+
+# My recommendation for the screenshot order
+Use this order in the README:
+
+1. Candidate Management  
+2. Candidate Matching  
+3. AI Resume Dashboard  
+4. Resume Score Screen  
+5. Resume Editor  
+6. AI Checklist Generator  
+7. Document Checklist Manager  
+8. Bulk Email Broadcast  
+9. Support Ticket Create  
+10. Ticket Detail View  
+11. Live Chat Support  
+12. Developer Dashboard  
+13. Login Activity Dashboard  
+
+---
+
+If you want, send me **all the remaining Tresume screenshots / module names**, and I’ll do the **final polished Tresume full overview README** with:
+- **exact repo description**
+- **final screenshot order**
+- **full module list**
+- **professional README ready to paste into GitHub**
