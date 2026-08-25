@@ -4,22 +4,32 @@ export const ProjectCard = ({
   title,
   description,
   imgUrl,
-  url,
+  onClick,
 }) => {
   return (
-    <Col size={12} sm={6} md={4}>
-      <div
-        className="proj-imgbx"
-        onClick={() => window.open(url, "_blank")}
-        style={{ cursor: "pointer" }}
+    <Col xs={12} sm={6} md={4} className="project-grid-column">
+      <button
+        type="button"
+        className="project-clickable"
+        onClick={onClick}
       >
-        <img src={imgUrl} alt={title} />
+        <div className="project-image-wrapper">
+          <img
+            src={imgUrl}
+            alt={title}
+            className="project-card-image"
+          />
 
-        <div className="proj-txtx">
-          <h4>{title}</h4>
-          <span>{description}</span>
+          <div className="project-overlay">
+            <span>View Details</span>
+          </div>
         </div>
-      </div>
+
+        <div className="project-card-info">
+          <h4>{title}</h4>
+          <p>{description}</p>
+        </div>
+      </button>
     </Col>
   );
 };
