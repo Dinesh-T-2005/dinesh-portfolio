@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import headerImg from "../assets/img/header-img.svg";
+// import headerImg from "../assets/img/header-img.svg";
+import headerImg from "../assets/img/ChatGPT Image Aug 26, 2026, 09_34_16 PM.png"
 import { ArrowRightCircle } from 'react-bootstrap-icons';
 import DineshCV from "../assets/img/Dinesh_CV1.pdf";
 import 'animate.css';
@@ -12,7 +13,7 @@ export const Banner = () => {
   const [text, setText] = useState('');
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const [index, setIndex] = useState(1);
-  const toRotate = ["Full Stack Developer", "Angular Developer", "Software Engineer" ,"React Developer"];
+  const toRotate = ["Full Stack Developer", "Angular Developer", "Software Engineer", "React Developer"];
   const period = 2000;
 
   useEffect(() => {
@@ -79,9 +80,20 @@ export const Banner = () => {
           <Col xs={12} md={6} xl={5}>
             <TrackVisibility>
               {({ isVisible }) =>
-                <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
-                  <img src={headerImg} alt="Header Img" />
-                </div>}
+                <div
+                  className={
+                    isVisible
+                      ? "banner-img-wrapper animate__animated animate__fadeIn"
+                      : "banner-img-wrapper"
+                  }
+                >
+                  <img
+                    src={headerImg}
+                    alt="Dinesh"
+                    className="banner-profile-img"
+                  />
+                </div>
+              }
             </TrackVisibility>
           </Col>
         </Row>

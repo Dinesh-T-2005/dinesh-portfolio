@@ -7,25 +7,33 @@ import colorSharp from "../assets/img/color-sharp.png"
 
 export const Skills = () => {
   const responsive = {
-    superLargeDesktop: {
-      // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 3000 },
-      items: 5
-    },
     desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 3
+      breakpoint: {
+        max: 3000,
+        min: 1024,
+      },
+      items: 3,
+      slidesToSlide: 1,
     },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1
-    }
-  };
 
+    tablet: {
+      breakpoint: {
+        max: 1024,
+        min: 768,
+      },
+      items: 2,
+      slidesToSlide: 1,
+    },
+
+    mobile: {
+      breakpoint: {
+        max: 768,
+        min: 0,
+      },
+      items: 1,
+      slidesToSlide: 1,
+    },
+  };
   return (
     <section className="skill" id="skills">
       <div className="container">
@@ -34,42 +42,61 @@ export const Skills = () => {
             <div className="skill-bx wow zoomIn">
               <h2>Skills</h2>
               <p>Experienced in developing modern web applications using Angular, TypeScript, and JavaScript. Proficient in building responsive user interfaces with HTML, CSS, Angular Material, and Tailwind CSS. Skilled in REST API integration, Reactive Forms, and creating reusable components. Familiar with Node.js, SQL, Git, Postman, and collaborating with cross-functional teams to deliver high-quality solutions.</p>
-              <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
-
+              <Carousel
+                responsive={responsive}
+                infinite={true}
+                autoPlay={true}
+                autoPlaySpeed={1600}
+                transitionDuration={800}
+                className="owl-carousel owl-theme skill-slider"
+              >
                 <div className="item">
-                  <img src={meter1} alt="Image" />
+                  <img src={meter1} alt="HTML" />
                   <h5>HTML</h5>
                 </div>
+
                 <div className="item">
-                  <img src={meter2} alt="Image" />
+                  <img src={meter2} alt="CSS" />
                   <h5>CSS</h5>
                 </div>
+
                 <div className="item">
-                  <img src={meter1} alt="Image" />
+                  <img src={meter1} alt="Angular" />
                   <h5>Angular</h5>
                 </div>
+
                 <div className="item">
-                  <img src={meter2} alt="Image" />
+                  <img src={meter2} alt="TypeScript" />
                   <h5>TypeScript</h5>
                 </div>
+
                 <div className="item">
-                  <img src={meter3} alt="Image" />
+                  <img src={meter3} alt="Node.js" />
                   <h5>Node.js</h5>
                 </div>
-                 <div className="item">
-                  <img src={meter1} alt="Image" />
+
+                <div className="item">
+                  <img src={meter1} alt="Express.js" />
                   <h5>Express.js</h5>
                 </div>
+
                 <div className="item">
-                  <img src={meter2} alt="Image" />
+                  <img src={meter1} alt="Next.js" />
+                  <h5>Next.js</h5>
+                </div>
+
+                <div className="item">
+                  <img src={meter2} alt="Microsoft SQL Server" />
                   <h5>Microsoft SQL Server</h5>
                 </div>
+
                 <div className="item">
-                  <img src={meter1} alt="Image" />
+                  <img src={meter1} alt="React" />
                   <h5>React</h5>
                 </div>
+
                 <div className="item">
-                  <img src={meter1} alt="Image" />
+                  <img src={meter1} alt="REST API" />
                   <h5>REST API</h5>
                 </div>
               </Carousel>

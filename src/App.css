@@ -1746,3 +1746,19 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     font-size: 34px;
   }
 }
+.banner-img-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-profile-img {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  display: block;
+  margin: -90px auto 0;
+  object-fit: contain;
+  animation: updown 3s linear infinite;
+}
